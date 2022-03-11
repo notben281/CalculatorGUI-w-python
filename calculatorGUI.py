@@ -28,9 +28,9 @@ def button_equal():
 
 def button_subtract():
     first_number = e.get()
-    f_num = int(first_number)
+    global f_num
+    f_num = -int(first_number)
     e.delete(0, END)
-    global second_number   
         
     
 
