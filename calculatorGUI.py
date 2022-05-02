@@ -33,8 +33,10 @@ def button_equal():
        e.insert(0, f_num * int(second_number))
    if math == "division":
        e.insert(0, f_num / int(second_number))
-   if math =="exponentiation":
+   if math == "exponentiation":
        e.insert(0, f_num ** int(second_number)) 
+   if math == "modulus":
+       e.insert(0, f_num % int(second_number))
 
 def button_subtract():
     first_number = e.get()
@@ -65,6 +67,13 @@ def button_exp():
    f_num = int(first_number)
    e.delete(0, END)
 
+def button_mod():
+   first_number = e.get()
+   global f_num, math
+   math="modulus"
+   f_num = int(first_number)
+   e.delete(0, END)
+
         
  
 
@@ -85,7 +94,8 @@ button_clear = Button(root, text="Clear", padx=79, pady=20, command=button_clear
 button_subtract = Button(root, text="-", padx=81, pady=20, command=button_subtract)
 button_multiply = Button(root, text="x", padx=63, pady=20, command=button_multiply)
 button_divide = Button(root, text="/", padx=83, pady=20, command=button_divide)
-button_exp = Button(root, text="**", padx=60, pady=20, command=button_exp) 
+button_exp = Button(root, text="**", padx=60, pady=20, command=button_exp)
+button_mod = Button(root, text="%", padx=60, pady=20, command=button_mod) 
 
 button_1.grid(row=1, column=0)
 button_2.grid(row=1, column=1)
@@ -107,5 +117,6 @@ button_subtract.grid(row=5, column=2, columnspan=1)
 button_multiply.grid(row=5, column=3, columnspan=1)
 button_divide.grid(row=4, column=2, columnspan=1)
 button_exp.grid(row=4, column=3, columnspan=1)
+button_mod.grid(row=3, column=3, columnspan=1)
 
 root.mainloop()
